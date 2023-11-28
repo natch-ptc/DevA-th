@@ -39,7 +39,6 @@ export function getAllFoundersData() {
         } as founderDataType
     })
 
-    console.log(allFoundersData)
     return allFoundersData
 }
 

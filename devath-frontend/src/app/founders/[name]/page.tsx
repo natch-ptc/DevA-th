@@ -34,7 +34,6 @@ export default async function Founder({
     linkedIn,
     website,
   } = await getFounderData(params.name);
-  console.log(name);
   const allFounders = await getAllFoundersData()
     .filter((founder) => founder.name !== params.name)
     .map(
