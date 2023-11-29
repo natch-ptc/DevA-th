@@ -1,7 +1,7 @@
 ---
 nickname: "Earn"
-position: "Robotic Engineer"
-quote: "This is a very cool quote by Earn"
+position: "Robotic Engineer, Business and Marketing"
+quote: "Stressed is just desserts spelled backward."
 ---
 
-I’ve been working with DevA team for 1 year and f;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsdf;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsdI’ve been working with DevA team for 1 year and f;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsdf;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsdf;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsd
+I’ve been working with the DevA team for 1 year since I was a freshman. I am interested in robotics, branding, business, and marketing.
