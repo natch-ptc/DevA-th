@@ -1,4 +1,4 @@
-import { DevaTag, OtherFounders } from "@/components";
+import { DevaTag, FoundersList } from "@/components";
 import { Stack, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
