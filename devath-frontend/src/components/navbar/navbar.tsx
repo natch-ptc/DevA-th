@@ -222,17 +222,6 @@ const MobileNavItem = ({ label, children, href, subLabel }: NavItem) => {
         )}
         </Flex>
       </Box>
-      {/* <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
-          opacity={0}
-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
-          flex={1}
-        >
-          <Icon color={'#FFFFFF'} w={5} h={5} as={ChevronRightIcon} /> {/*Color of icon right > when zoom out*/}
-        {/*</Flex> */}
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
         <Stack
