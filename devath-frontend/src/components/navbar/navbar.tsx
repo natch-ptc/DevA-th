@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
         {/* Left side with logo */}
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} align="center">
           <Box boxSize="auto">
-            <Image src="/icons/deva.png" alt="DevA" htmlHeight="40px" htmlWidth="135.54px" />
+            <Image src="/icons/deva.png" alt="DevA" htmlHeight="30px" htmlWidth="120.54px" padding="15px"/>
           </Box>
         </Flex>
 
@@ -72,9 +72,9 @@ const Navbar: React.FC = () => {
             onClick={onToggle}
             icon={
               isOpen ? (
-                <CloseIcon w={3} h={3} color="#FFFFFF" />  // This color of close icon when zoom in
+                <CloseIcon w={20} h={20} color="#FFFFFF" />  // This color of close icon when zoom in
               ) : (
-                <HamburgerIcon w={5} h={5} color="#FFFFFF" />  // This color of hamburger icon when zoom in
+                <HamburgerIcon w={20} h={20} color="#FFFFFF" />  // This color of hamburger icon when zoom in
               )
             }
             variant={'ghost'}
@@ -114,6 +114,7 @@ const DesktopNav = () => {
                 fontSize={'sm'}
                 fontWeight={500}
                 color={linkColor}
+                padding={"15px"}
                 _hover={{
                   textDecoration: 'none',
                   color: linkHoverColor,
