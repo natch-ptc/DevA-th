@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
         justify="space-between"
       >
         {/* Left side with logo */}
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} align="center">
+        <Flex flex={{ base: 1 }} justify={{ base: 'left', md: 'start' }} align="center">
           <Box boxSize="auto">
             <Image src="/icons/deva.png" alt="DevA" htmlHeight="30px" htmlWidth="120.54px" padding="15px"/>
           </Box>
@@ -111,7 +111,7 @@ const DesktopNav = () => {
                 as="a"
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
+                fontSize={'16px'}
                 fontWeight={500}
                 color={linkColor}
                 padding={"15px"}
@@ -155,12 +155,13 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
         <Box>
           <Text
             transition={'all .3s ease'}
+            fontSize = {'16px'}
             _groupHover={{ color: useColorModeValue('#FF3535', 'gray.900') }} // This is alphabet Color when hover sub label inside the box 
             fontWeight={500}
           >
             {label}
           </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
+          <Text fontSize={'14px'}>{subLabel}</Text>
         </Box>
         <Flex
           transition={'all .3s ease'}
@@ -180,7 +181,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack bg={useColorModeValue('#111111', 'gray.800')} p={4} display={{ md: 'none' }}> {/*Block color when zoom in (it's a menu block!!)*/}
+    <Stack bg={useColorModeValue('#111111', 'gray.800')} p={4} display={{ md: 'none' }} fontSize={'16px'}> {/*Block color when zoom in (it's a menu block!!)*/}
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -203,20 +204,35 @@ const MobileNavItem = ({ label, children, href, subLabel }: NavItem) => {
           textDecoration: 'none',
         }}
       >
+        <Flex>
         <Text fontWeight={600} color={useColorModeValue('#FFFFFF', 'gray.200')}> {/*This is an alphabet color for label when zoom in*/}
           {label}
         </Text>
+        
         {children && (
           <Icon
             as={ChevronDownIcon}
             color="#FFFFFF"  /*Color of icon right > when zoom in*/
             transition={'all .25s ease-in-out'}
             transform={isOpen ? 'rotate(180deg)' : ''}
+            
             w={6}
             h={6}
           />
         )}
+        </Flex>
       </Box>
+      {/* <Flex
+          transition={'all .3s ease'}
+          transform={'translateX(-10px)'}
+          opacity={0}
+          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+          justify={'flex-end'}
+          align={'center'}
+          flex={1}
+        >
+          <Icon color={'#FFFFFF'} w={5} h={5} as={ChevronRightIcon} /> {/*Color of icon right > when zoom out*/}
+        {/*</Flex> */}
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
         <Stack
@@ -243,12 +259,13 @@ const MobileNavItem = ({ label, children, href, subLabel }: NavItem) => {
                   <Box>
                     <Text
                       transition={'all .3s ease'}
+                      fontSize = {'16px'}
                       _groupHover={{ color: useColorModeValue('#FF3535', 'gray.900') }} //This is text color sublable when hover and zoom in
                       fontWeight={500}
                     >
                       {child.label}
                     </Text>
-                    <Text fontSize={'sm'}>{child.subLabel}</Text>
+                    <Text fontSize={'14px'}>{child.subLabel}</Text>
                   </Box>
                   <Flex
                     transition={'all .3s ease'}
