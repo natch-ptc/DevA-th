@@ -46,9 +46,9 @@ export default async function Founder({
         gap={8}
       >
         <Stack spacing={3}>
-          <Text fontSize="6xl" fontWeight="300">
+          <Text fontSize="96" fontWeight="300">
             Never doubt that small group of thoughtful, committed citizens can
-            change the world. *Quote*
+            change the world.
           </Text>
         </Stack>
       </Stack>
@@ -64,20 +64,23 @@ export default async function Founder({
         pt={12}
         pb={20}
         gap={8}
+        justify="center"
       >
         <Stack>
           <DevaTag label="About" />
           <Stack direction="row">
-            <Text fontSize="6xl" fontWeight="300">
-              Doing the things we do every day a little bit better.
-            </Text>
             <Stack>
-              <Text>
+              <Text fontSize="6xl" fontWeight="300">
+                Doing the things we do every day a little bit better.
+              </Text>
+            </Stack>
+            <Stack>
+              <Text p="3%">
                 Welcome to the forefront of innovation! 🚀 We are "DevA",
                 Developer and Agile Thinker. Aspiring young entrepreneurs to
                 create innovation to change the world.
               </Text>
-              <Text>
+              <Text p="3%">
                 We're a team of passionate innovators dedicated to creating a
                 better world through the latest trends in design, technology,
                 and business. Follow us for a fast-paced, up-to-date journey
