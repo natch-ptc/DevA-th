@@ -4,6 +4,7 @@ import { getAllFounders, getAllFoundersData } from "@/utils";
 import startCase from "lodash/startCase";
 import { DevaTag, FounderDisplayData, FoundersList } from "@/components";
 import { ContactSection } from "@/components/contact/ContactSection";
+import { GlassModels } from "@/components/animations/GlassModels";
 
 export default async function Home() {
   const allFounders = await getAllFoundersData().map(
@@ -19,6 +20,7 @@ export default async function Home() {
   return (
     <Stack>
       <Navbar />
+
       <Stack
         pos="absolute"
         top="0"
@@ -26,14 +28,15 @@ export default async function Home() {
         gap="0"
         bgColor="background.primary"
       >
+        <GlassModels />
         <Stack
           w="100vw"
           h="100vh"
           top="0"
           right="0"
           justify="center"
-          bgColor="background.primary"
           color="content.primary"
+          pos="absolute"
           px={[10, 16]}
           pt={20}
           pb={20}
