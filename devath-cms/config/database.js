@@ -1,10 +1,8 @@
 const path = require('path');
-const { parse } = require("pg-connection-string");
 
 module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
-  const { host, port, database, user, password } = parse(env("DATABASE_URL"));
-  
+
   const connections = {
     mysql: {
       connection: {
@@ -89,13 +87,6 @@ module.exports = ({ env }) => {
       client,
       ...connections[client],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
-      connection: {
-          host,
-          port,
-        database,
-        user,
-        password,
-        ssl: { rejectUnauthorized: false },
     },
   };
 };
