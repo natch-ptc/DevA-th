@@ -1,22 +1,21 @@
-// path: ./config/env/production/database.js
+// path: ./config/env/production/database.ts
 
-const { parse } = require("pg-connection-string");
+import { parse } from 'pg-connection-string';
+const config = parse(process.env.DATABASE_URL);
 
-module.exports = ({ env }) => {
-  const { host, port, database, user, password } = parse(env("DATABASE_URL"));
-  
-  return {
+export default ({ env }) => ({
+  connection: {
+    client: 'postgres',
     connection: {
-      client: 'postgres',
-      connection: {
-        host,
-        port,
-        database,
-        user,
-        password,
-        ssl: { rejectUnauthorized: false },
+      host: config.host,
+      port: config.port,
+      database: config.database,
+      user: config.user,
+      password: config.password,
+      ssl: {
+        rejectUnauthorized: false
       },
-      debug: false,
     },
-  }
-};
+    debug: false,
+  },
+});
