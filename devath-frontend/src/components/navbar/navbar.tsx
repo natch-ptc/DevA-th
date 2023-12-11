@@ -58,6 +58,7 @@ const Navbar: React.FC = () => {
       top={visible ? "0" : "-60px"}
     >
       <Flex
+        bg={useColorModeValue("#111111", "#FFFFFF")} //block color
         color={useColorModeValue("#FFFFFF", "#111111")} //the alphabet color inside block
         minH={"60px"}
         py={{ base: 2 }}
