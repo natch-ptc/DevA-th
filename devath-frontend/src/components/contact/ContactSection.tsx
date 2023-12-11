@@ -28,13 +28,13 @@ export const ContactSection = () => {
       px={[10, 16]}
       pt={12}
       pb={20}
-      gap={8}
+      gap={[4, 2, 8]}
       justify="center"
     >
       <DevaTag label="Contact" />
-      <Stack direction="row">
-        <Stack w="50%">
-          <Text fontSize="6xl" fontWeight="300">
+      <Stack direction={["column", "column", "row"]} gap={[16, 8, 4]}>
+        <Stack w={["100%", "100%", "50%"]}>
+          <Text fontSize={["4xl", "4xl", "5xl", "6xl"]} fontWeight="300">
             Let’s change the world together
           </Text>
           <Text>+66 92 595 4992, +66 98 799 3905</Text>
@@ -52,7 +52,7 @@ export const ContactSection = () => {
         <Stack
           px={18}
           py={1}
-          w="50%"
+          w={["100%", "100%", "50%"]}
           p="3%"
           border="1px solid"
           borderColor="content.primary"
