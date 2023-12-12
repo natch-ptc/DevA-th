@@ -1,10 +1,11 @@
-import { Heading, Stack, Text } from "@chakra-ui/react";
+import { HStack, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import Navbar from "../components/navbar/navbar";
 import { getAllFounders, getAllFoundersData } from "@/utils";
 import startCase from "lodash/startCase";
 import { DevaTag, FounderDisplayData, FoundersList } from "@/components";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { GlassModels } from "@/components/animations/GlassModels";
+import Link from "next/link";
 
 export default async function Home() {
   const allFounders = await getAllFoundersData().map(
@@ -100,6 +101,12 @@ export default async function Home() {
           gap={8}
         >
           <DevaTag label="Project" />
+          <HStack align="center" justify="space-around">
+            <Link href="/mock">
+              <Image src="/brightup.png" w="30vw" objectFit="contain" />
+            </Link>
+            <Image src="/neon.png" w="30vw" objectFit="contain" />
+          </HStack>
         </Stack>
         <Stack
           w="100vw"
