@@ -1,25 +1,18 @@
 import { DevaTag, FoundersList } from "@/components";
+import { ContactSection } from "@/components/contact/ContactSection";
+import Navbar from "@/components/navbar/navbar";
 import { Stack, Text } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 export default function FounderLayout({ children }: { children: ReactNode }) {
   return (
-    <Stack
-      w="100vw"
-      h="100vh"
-      pos="absolute"
-      top="0"
-      right="0"
-      bgColor="background.primary"
-      color="content.primary"
-      px={[10, 16]}
-      pt={12}
-      pb={20}
-      gap={8}
-      overflowY="scroll"
-    >
-      <DevaTag label="Founder" />
-      {children}
+    <Stack bgColor="background.primary">
+      <Navbar />
+      <Stack w="100vw" color="content.primary" px={[10, 16]} pt={24} gap={8}>
+        <DevaTag label="Founder" />
+        {children}
+      </Stack>
+      <ContactSection />
     </Stack>
   );
 }

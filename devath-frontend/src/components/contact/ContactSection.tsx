@@ -1,22 +1,19 @@
-import {
-  Box,
-  HStack,
-  Heading,
-  Image,
-  Link,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import { default as NextLink } from "next/link";
-import { DevaTag, FoundersList, SocialMediaButton, SocialMediaIcons } from "..";
-import {
-  founderDataType,
-  getAllFounders,
-  getAllFoundersData,
-  getFounderData,
-} from "@/utils";
+"use client";
+
+import { Box, Input, Stack, Text, Textarea } from "@chakra-ui/react";
+import { DevaTag, SocialMediaIcons } from "..";
+import { useState } from "react";
 
 export const ContactSection = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [content, setContent] = useState("");
+  const [isEmailSent, setIsEmailSent] = useState(false);
+
+  function handleSendEmail() {
+    setIsEmailSent(true);
+  }
+
   return (
     <Stack
       w="100vw"
@@ -30,6 +27,7 @@ export const ContactSection = () => {
       pb={20}
       gap={[4, 2, 8]}
       justify="center"
+      id="contact"
     >
       <DevaTag label="Contact" />
       <Stack direction={["column", "column", "row"]} gap={[16, 8, 4]}>
@@ -58,12 +56,57 @@ export const ContactSection = () => {
           borderColor="content.primary"
           borderRadius={10}
         >
-          <Text pb="3%">Hello,</Text>
-          <Text pb="5%">
-            My name is your name and my e-mail address is your email and I would
-            like to discuss about what you want to talk to us.
-          </Text>
-          <DevaTag label="Send us email" size="sm" />
+          {isEmailSent ? (
+            <Text>
+              Thank you for the email, Look forward to hearing from us soon!
+            </Text>
+          ) : (
+            <Box>
+              <Text pb="3%">Hello,</Text>
+              <Text pb="5%">
+                My name is{" "}
+                <Input
+                  placeholder="Your Name"
+                  border="none"
+                  borderBottom="1px solid"
+                  borderRadius={0}
+                  px={0}
+                  py={2}
+                  h="16px"
+                  w={`${name.length > 0 ? name.length : 8}ch`}
+                  onChange={(event) => setName(event.target.value)}
+                />{" "}
+                and my e-mail address is{" "}
+                <Input
+                  placeholder="Your Email"
+                  border="none"
+                  borderBottom="1px solid"
+                  borderRadius={0}
+                  px={0}
+                  py={2}
+                  h="16px"
+                  w={`${email.length > 0 ? email.length : 8}ch`}
+                  onChange={(event) => setEmail(event.target.value)}
+                />{" "}
+                and I would like to discuss about
+                <Textarea
+                  placeholder="What you want to talk to us"
+                  border="none"
+                  borderBottom="1px solid"
+                  borderRadius={0}
+                  px={0}
+                  my={2}
+                  h="fit-content"
+                />
+              </Text>
+
+              <DevaTag
+                label="Send us email"
+                size="sm"
+                onClick={handleSendEmail}
+              />
+            </Box>
+          )}
         </Stack>
       </Stack>
     </Stack>

@@ -1,13 +1,13 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { FlexProps, HStack, StackProps, Text } from "@chakra-ui/react";
 
 export type DevaTagSizes = "sm" | "md";
 export type DevaTagProps = {
   label: string;
   size?: DevaTagSizes;
-};
+} & StackProps;
 
 export const DevaTag = (props: DevaTagProps) => {
-  const { label, size = "md" } = props;
+  const { label, size = "md", ...rest } = props;
 
   return (
     <HStack
@@ -17,6 +17,7 @@ export const DevaTag = (props: DevaTagProps) => {
       border="1px solid"
       borderColor="content.primary"
       borderRadius={30}
+      {...rest}
     >
       <Text
         color="content.primary"

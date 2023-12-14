@@ -7,66 +7,62 @@ import {
 import { DevaDropdown } from "@/components/DevaDropdown";
 import { DevaProjectBox } from "@/components/DevaProjectBox";
 import { ContactSection } from "@/components/contact/ContactSection";
-import {
-  founderDataType,
-  getAllFounders,
-  getAllFoundersData,
-  getFounderData,
-} from "@/utils";
-import { HStack, Heading, Image, Stack, Text, VStack } from "@chakra-ui/react";
-import startCase from "lodash/startCase";
-import { GetStaticPropsContext } from "next";
-import { ST } from "next/dist/shared/lib/utils";
+import Navbar from "@/components/navbar/navbar";
 
-export default async function Founder({
-  params,
-}: {
-  params: { name: string };
-}) {
-  const allFounders = await getAllFoundersData().map(
-    (founder) =>
+import { HStack, Heading, Image, Stack, Text, VStack } from "@chakra-ui/react";
+
+import axios from "axios";
+
+export type ProjectData = {
+  name: string;
+  description: string;
+  image: string;
+  tags: string[];
+  href: string;
+};
+
+export default async function Projects() {
+  const allProjects = await axios
+    .get(
+      "https://devath-cms-b070dc3bda56.herokuapp.com/api/blogs?fields[0]=blogTitle&fields[1]=blogDesc&populate[0]=tags&populate[1]=coverImg"
+    )
+    .then((res) => res.data.data);
+
+  const allProjectsData = allProjects.map(
+    (p: any) =>
       ({
-        name: founder.name,
-        nickname: startCase(founder.nickname),
-        pictureSrc: `/founders/img/${founder.name}.png`,
-        position: founder.position,
-      } as FounderDisplayData)
-  );
+        name: p.attributes.blogTitle,
+        description: p.attributes.blogDesc,
+        image: p.attributes.coverImg?.data?.attributes?.url,
+        tags: p.attributes.tags.data.map((t: any) => t.name),
+        href: `/project/${p.id}`,
+      } as ProjectData)
+  ) as ProjectData[];
 
   return (
-    <Stack pos="absolute" top="0" right="0" gap="0">
-      <Stack
-        w="100vw"
-        h="100vh"
-        top="0"
-        right="0"
-        bgColor="background.primary"
-        color="content.primary"
-        px={[10, 16]}
-        pt={12}
-        pb={20}
-        gap={8}
-      >
-        <Stack>
-          <Stack direction="row" pb="1%">
-            <DevaTag label="About" />
-            <DevaDropdown label="Tag" />
-          </Stack>
-
-          <Stack>
-            <Text fontSize="6xl" fontWeight="300">
-              Yes, the world has changed
-            </Text>
-          </Stack>
+    <Stack bgColor="background.primary" color="content.primary">
+      <Navbar />
+      <Stack top="0" right="0" px={[10, 16]} pt={28} pb={10} gap={2}>
+        <Stack direction="row">
+          <DevaTag label="Project" />
+          {/*<DevaDropdown label="Tag" />*/}
         </Stack>
 
-        <DevaProjectBox
-          name="Neon"
-          description="Generative AI for slides and presentations"
-          tags={["ai", "award"]}
-        />
+        <Text fontSize="6xl" fontWeight="300">
+          Yes, the world has changed
+        </Text>
       </Stack>
-
+      <HStack
+        w="100%"
+        px={[10, 16]}
+        justify="space-between"
+        flexWrap="wrap"
+        gap={12}
+      >
+        {allProjectsData.map((project) => (
+          <DevaProjectBox {...project} key={project.name} />
+        ))}
+      </HStack>
       <ContactSection />
     </Stack>
   );
