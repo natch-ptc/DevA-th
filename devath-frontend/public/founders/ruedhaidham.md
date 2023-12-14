@@ -1,7 +1,7 @@
 ---
 nickname: "Natch"
 position: "UX Engineer"
-quote: "Hello! I’m Natch, co-founder and UX engineer at DevA. Looking forward to work with you."
+quote: "DevA innovation will make everyone smile, the team as well."
 ---
 
-I’ve been working with DevA team for 1 year and f;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsdf;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsdI’ve been working with DevA team for 1 year and f;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsdf;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsdf;dllkfdslfdlk;fsd’lfl;skdfl;kdf;lsdfldsflsdl;fdskfdsl;fsdlfsdfsdlfsd
+The most important thing for me working as DevA member is to have space for everyone to explore about their future and life path, both DevA customers and DevA team. Innovation have ability to make world be pleasant place, no inequality, no suffer, everything will be better if we design for everyone. That's why I commit as DevA team member.

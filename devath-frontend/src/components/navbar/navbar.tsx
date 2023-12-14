@@ -10,6 +10,7 @@ import {
   IconButton,
   Stack,
   Collapse,
+  Link,
   Icon,
   Popover,
   PopoverTrigger,
@@ -23,8 +24,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { readdirSync } from "fs";
-import { getAllFounders } from "@/utils";
+import { default as NextLink } from "next/link";
 
 const Navbar: React.FC = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -76,13 +76,15 @@ const Navbar: React.FC = () => {
           align="center"
         >
           <Box boxSize="auto">
-            <Image
-              src="/icons/deva.png"
-              alt="DevA"
-              htmlHeight="30px"
-              htmlWidth="120.54px"
-              padding="15px"
-            />
+            <Link href="/" as={NextLink}>
+              <Image
+                src="/icons/deva.png"
+                alt="DevA"
+                htmlHeight="30px"
+                htmlWidth="120.54px"
+                padding="15px"
+              />
+            </Link>
           </Box>
         </Flex>
 
@@ -344,19 +346,29 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Founder",
     children: [
       {
-        label: "sublabel1",
-        subLabel: "subsublabel1",
-        href: "#",
+        label: "Pichyapa",
+        subLabel: "Front-end Developer",
+        href: "/founders/pichyapa",
       },
       {
-        label: "sublabel2",
-        subLabel: "subsublabel2",
-        href: "#",
+        label: "Ruedhaidham",
+        subLabel: "UX Engineer",
+        href: "/founders/ruedhaidham",
+      },
+      {
+        label: "Folk",
+        subLabel: "ML Engineer",
+        href: "/founders/sakolkrit",
+      },
+      {
+        label: "Earn",
+        subLabel: "Robotic Engineer, Business and Marketing",
+        href: "/founders/yapar",
       },
     ],
   },
   {
     label: "Contact",
-    href: "#",
+    href: "#contact",
   },
 ];

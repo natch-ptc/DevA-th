@@ -4,18 +4,11 @@ import {
   SocialMediaIcons,
 } from "@/components";
 import {
-  founderDataType,
-  getAllFounders,
   getAllFoundersData,
   getFounderData,
 } from "@/utils";
 import { HStack, Heading, Image, Stack, Text, VStack } from "@chakra-ui/react";
 import startCase from "lodash/startCase";
-import { GetStaticPropsContext } from "next";
-
-function getImagePath(name: string) {
-  return `/founders/${name}.png`;
-}
 
 export default async function Founder({
   params,

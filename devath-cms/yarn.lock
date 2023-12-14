@@ -1903,6 +1903,15 @@
     "@strapi/utils" "4.15.4"
     sendmail "^1.6.1"
 
+"@strapi/provider-upload-cloudinary@^4.15.5":
+  version "4.15.5"
+  resolved "https://registry.yarnpkg.com/@strapi/provider-upload-cloudinary/-/provider-upload-cloudinary-4.15.5.tgz#aa3d66a57b7d59d43e57ea2047f66dc012bcdfdb"
+  integrity sha512-+A3E0ueVctlr1+uMr5N0sjKZcMhlute6nqCbQul93N9M520qycfWkIojxDI2n2TxeL3PNqPYhQ/14L/9V+WGJg==
+  dependencies:
+    "@strapi/utils" "4.15.5"
+    cloudinary "^1.41.0"
+    into-stream "^5.1.0"
+
 "@strapi/provider-upload-local@4.15.4":
   version "4.15.4"
   resolved "https://registry.yarnpkg.com/@strapi/provider-upload-local/-/provider-upload-local-4.15.4.tgz#ecd268c23f22a338237e652c15f0faf61d53e665"
@@ -2035,6 +2044,18 @@
   version "4.15.4"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.15.4.tgz#4f8b0f064f866bc2175cff63ea4a16d221b351d2"
   integrity sha512-w6dURdVraSoVkfZiU4enkJlrAJ0XxW/ma+SSsQJQuYjvyqg2wCndqhkjOnCu9mHZ701IbkYqRhF5jpm8gVEoDg==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.30.0"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    p-map "4.0.0"
+    yup "0.32.9"
+
+"@strapi/utils@4.15.5":
+  version "4.15.5"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.15.5.tgz#ffb39f545bb809273a46bc5a7e11f09ddc474517"
+  integrity sha512-1ARIaMh7i/lWTkPVnDX/EuWCJrIq9IrlNwToDG4tnej5ZzqhGQVD4G4n+I4nKLDjXi6qhR+7AGpcgtchBoWtRw==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
@@ -3226,6 +3247,21 @@ clone@^1.0.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==
 
+cloudinary-core@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.13.0.tgz#b59f90871b6c708c3d0735b9be47ac08181c57fb"
+  integrity sha512-Nt0Q5I2FtenmJghtC4YZ3MZZbGg1wLm84SsxcuVwZ83OyJqG9CNIGp86CiI6iDv3QobaqBUpOT7vg+HqY5HxEA==
+
+cloudinary@^1.41.0:
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/cloudinary/-/cloudinary-1.41.0.tgz#f9ac2653222ed8fb52d4b3d78ddcf7b5556f8c70"
+  integrity sha512-qFf2McjvILJITePf4VF1PrY/8c2zy+/q5FVV6V3VWrP/gpIZsusPqXL4QZ6ZKXibPRukzMYqsQEhaSQgJHKKow==
+  dependencies:
+    cloudinary-core "^2.13.0"
+    core-js "^3.30.1"
+    lodash "^4.17.21"
+    q "^1.5.1"
+
 co-body@^5.1.1:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/co-body/-/co-body-5.2.0.tgz#5a0a658c46029131e0e3a306f67647302f71c124"
@@ -3492,6 +3528,11 @@ core-js-pure@^3.23.3, core-js-pure@^3.30.2:
   version "3.34.0"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.34.0.tgz#981e462500708664c91b827a75b011f04a8134a0"
   integrity sha512-pmhivkYXkymswFfbXsANmBAewXx86UBfmagP+w0wkK06kLsLlTK5oQmsURPivzMkIBQiYq2cjamcZExIwlFQIg==
+
+core-js@^3.30.1:
+  version "3.34.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.34.0.tgz#5705e6ad5982678612e96987d05b27c6c7c274a5"
+  integrity sha512-aDdvlDder8QmY91H88GzNi9EtQi2TjvQhpCX6B1v/dAZHU1AuLgHvRh54RiOerpEhEW46Tkf+vgAViB/CWC0ag==
 
 core-util-is@^1.0.2, core-util-is@~1.0.0:
   version "1.0.3"
@@ -5290,6 +5331,14 @@ intl-messageformat@10.3.4:
     "@formatjs/fast-memoize" "2.0.1"
     "@formatjs/icu-messageformat-parser" "2.3.1"
     tslib "^2.4.0"
+
+into-stream@^5.1.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/into-stream/-/into-stream-5.1.1.tgz#f9a20a348a11f3c13face22763f2d02e127f4db8"
+  integrity sha512-krrAJ7McQxGGmvaYbB7Q1mcA+cRwg9Ij2RfWIeVesNBgVDZmzY/Fa4IpZUT3bmdRzMzdf/mzltCG2Dq99IZGBA==
+  dependencies:
+    from2 "^2.3.0"
+    p-is-promise "^3.0.0"
 
 into-stream@^6.0.0:
   version "6.0.0"
@@ -7391,6 +7440,11 @@ purest@4.0.2:
     request-compose "^2.1.4"
     request-multipart "^1.0.0"
     request-oauth "^1.0.1"
+
+q@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
+  integrity sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==
 
 qs@6.11.1:
   version "6.11.1"
