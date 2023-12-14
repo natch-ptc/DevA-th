@@ -44,7 +44,7 @@ export default async function Project({ params }: { params: { id: string } }) {
   const images = projectInfo?.content?.data?.map((img) => img.attributes.url);
 
   return (
-    <Stack gap={0} spacing={0}>
+    <Stack gap={0} spacing={0} overflowX="hidden">
       <Navbar />
       <Stack
         top="0"
