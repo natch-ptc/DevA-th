@@ -66,7 +66,6 @@ export const GlassModels = () => {
           gltfModel.rotation.z += 0.2;
           var deltaY = 0.001;
           const renderScene = () => {
-            console.log(gltfModel.rotation.y);
             if (gltfModel.rotation.y < -0.5 || gltfModel.rotation.y > 0.5)
               deltaY = -deltaY;
             gltfModel.rotation.y += deltaY;
@@ -78,10 +77,7 @@ export const GlassModels = () => {
           // Call the renderScene function to start the animation loop
           renderScene();
         },
-        undefined,
-        (error: Error) => {
-          console.log(error);
-        }
+        undefined
       );
 
       var gltfVModel: THREE.Object3D;
@@ -115,10 +111,7 @@ export const GlassModels = () => {
           // Call the renderScene function to start the animation loop
           renderScene();
         },
-        undefined,
-        (error: Error) => {
-          console.log(error);
-        }
+        undefined
       );
     }
   }, []);

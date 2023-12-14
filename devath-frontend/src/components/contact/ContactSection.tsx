@@ -3,6 +3,11 @@
 import { Box, Input, Stack, Text, Textarea } from "@chakra-ui/react";
 import { DevaTag, SocialMediaIcons } from "..";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = "deva_gmailService";
+const TEMPLATE_ID = "template_vecppaw";
+const PUBLIC_KEY = "TwB606JioWR4FEMPc";
 
 export const ContactSection = () => {
   const [name, setName] = useState("");
@@ -10,8 +15,28 @@ export const ContactSection = () => {
   const [content, setContent] = useState("");
   const [isEmailSent, setIsEmailSent] = useState(false);
 
-  function handleSendEmail() {
-    setIsEmailSent(true);
+  function handleSendEmail(e) {
+    e.preventDefault();
+    if (name !== "" && email !== "" && content !== "") {
+      setIsEmailSent(true);
+      emailjs
+        .send(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          {
+            name,
+            email,
+            message: content,
+          },
+          PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            console.log(result);
+          },
+          (err) => console.log(err)
+        );
+    }
   }
 
   return (
@@ -48,8 +73,6 @@ export const ContactSection = () => {
           />
         </Stack>
         <Stack
-          px={18}
-          py={1}
           w={["100%", "100%", "50%"]}
           p="3%"
           border="1px solid"
@@ -61,7 +84,7 @@ export const ContactSection = () => {
               Thank you for the email, Look forward to hearing from us soon!
             </Text>
           ) : (
-            <Box>
+            <Box py={[8, 1, 1, 1]} px={18}>
               <Text pb="3%">Hello,</Text>
               <Text pb="5%">
                 My name is{" "}
@@ -75,6 +98,7 @@ export const ContactSection = () => {
                   h="16px"
                   w={`${name.length > 0 ? name.length : 8}ch`}
                   onChange={(event) => setName(event.target.value)}
+                  value={name}
                 />{" "}
                 and my e-mail address is{" "}
                 <Input
@@ -87,6 +111,7 @@ export const ContactSection = () => {
                   h="16px"
                   w={`${email.length > 0 ? email.length : 8}ch`}
                   onChange={(event) => setEmail(event.target.value)}
+                  value={email}
                 />{" "}
                 and I would like to discuss about
                 <Textarea
@@ -97,6 +122,8 @@ export const ContactSection = () => {
                   px={0}
                   my={2}
                   h="fit-content"
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
                 />
               </Text>
 
