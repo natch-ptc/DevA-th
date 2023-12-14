@@ -55,7 +55,7 @@ export default async function Project({ params }: { params: { id: string } }) {
         bgColor="background.primary"
         color="content.primary"
         minH="100vh"
-        overflow="scroll"
+        overflowY="scroll"
       >
         <Text fontSize={["2xl", "3xl", "4xl"]} fontWeight="300">
           {projectInfo.blogTitle}
