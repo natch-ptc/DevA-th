@@ -44,7 +44,7 @@ export default async function Project({ params }: { params: { id: string } }) {
   const images = projectInfo?.content?.data?.map((img) => img.attributes.url);
 
   return (
-    <Stack gap={0} spacing={0} overflowX="hidden">
+    <Stack gap={0} spacing={0} overflowX="hidden" bgColor="background.primary">
       <Navbar />
       <Stack
         top="0"
@@ -57,7 +57,7 @@ export default async function Project({ params }: { params: { id: string } }) {
         minH="100vh"
         overflowY="scroll"
       >
-        <Text fontSize={["2xl", "3xl", "4xl"]} fontWeight="300">
+        <Text fontSize={["4xl", "3xl", "4xl"]} fontWeight="300">
           {projectInfo.blogTitle}
         </Text>
         <HStack flexWrap="wrap">
@@ -65,7 +65,13 @@ export default async function Project({ params }: { params: { id: string } }) {
             <DevaTag label={tag} size="sm" key={`${tag}_${i}`} />
           ))}
         </HStack>
-        <HStack align="center" h="60vh" overflowX="scroll" gap={4} pt={4}>
+        <HStack
+          align="center"
+          h={["fit-content", "60vh", "60vh", "60vh"]}
+          overflowX="scroll"
+          gap={4}
+          pt={4}
+        >
           <Image
             src={projectInfo.coverImg?.data?.attributes?.url}
             w="100%"

@@ -19,7 +19,12 @@ export const DevaProjectBox = (props: DevaProjectBoxProps) => {
   return (
     <Link href={href} as={NextLink}>
       <Stack>
-        <Image src={image} h="60vh" w="40vw" objectFit="cover" />
+        <Image
+          src={image}
+          h="60vh"
+          w={["100vw", "40vw", "40vw", "40vw"]}
+          objectFit="cover"
+        />
         <Stack>
           <Text fontSize="3xl" fontWeight="300">
             {name}
